@@ -1,0 +1,80 @@
+
+.userinfo-avatar.data-v-49ad94e4 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  border: 4rpx solid #faf0e6;
+  z-index: 1;
+  margin: 0 auto;
+  position: relative;
+  top: 50rpx;
+}
+.userinfo_name.data-v-49ad94e4 {
+  margin: 80rpx 0 0 0;
+  z-index: 1;
+}
+.header.data-v-49ad94e4 {
+  clear: both;
+  width: 100%;
+  margin-top: 30%;
+  text-align: center;
+  color: rgb(239, 159, 63);
+}
+.intro1.data-v-49ad94e4 {
+  font-size: 36rpx;
+}
+.intro2.data-v-49ad94e4 {
+  font-size: 48rpx;
+}
+.outSide.data-v-49ad94e4 {
+  width: 100%;
+  height: 100%;
+  background: rgb(75, 75, 75);
+  position: absolute;
+}
+.weather.data-v-49ad94e4 {
+  color: white;
+  padding-left: 70rpx;
+  padding-top: 120rpx;
+}
+.tq.data-v-49ad94e4 {
+  float: left;
+  font-size: 80rpx;
+}
+.wd.data-v-49ad94e4 {
+  margin-left: 20rpx;
+  float: left;
+}
+.ation.data-v-49ad94e4 {
+  position: absolute;
+  bottom: 150rpx;
+  width: 100%;
+}
+.skill.data-v-49ad94e4 {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.content ._img.data-v-49ad94e4 {
+  height: 130rpx;
+  width: 130rpx;
+}
+.cancel.data-v-49ad94e4 {
+  position: absolute;
+  bottom: 100rpx;
+  text-align: center;
+}
+.cancel ._img.data-v-49ad94e4 {
+  height: 90rpx;
+  width: 90rpx;
+}
+.skill ._p.data-v-49ad94e4 {
+  color: white;
+  font-size: 32rpx;
+}
+.content.data-v-49ad94e4 {
+  float: left;
+  width: 50%;
+}
