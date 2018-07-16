@@ -49,7 +49,7 @@
 }
 .ation.data-v-49ad94e4 {
   position: absolute;
-  bottom: 150rpx;
+  bottom: 200rpx;
   width: 100%;
 }
 .skill.data-v-49ad94e4 {
@@ -62,11 +62,14 @@
   width: 130rpx;
 }
 .cancel.data-v-49ad94e4 {
+  width: 200rpx;
   position: absolute;
-  bottom: 100rpx;
-  text-align: center;
+  bottom: 50rpx;
+  left: 50%;
+  margin-left: -45rpx;
 }
 .cancel ._img.data-v-49ad94e4 {
+  margin: 0 auto;
   height: 90rpx;
   width: 90rpx;
 }
@@ -76,5 +79,6 @@
 }
 .content.data-v-49ad94e4 {
   float: left;
-  width: 50%;
+  width: 34%;
+  padding: 0 8%;
 }

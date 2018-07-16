@@ -10,6 +10,7 @@ export default {
         "navigationBarTitleText": "有空么",
         "backgroundColor": "#eeeeee",
         "backgroundTextStyle": "light",
+        "enablePullDownRefresh": true,
         "usingComponents": {
             "i-cell-group": "../../static/iview/cell-group/index",
             "i-cell": "../../static/iview/cell/index",

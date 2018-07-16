@@ -21,18 +21,18 @@
   </div>
   <div class="ation">
     <div class="skill">
-      <div class="content">
-        <img src="/static/images/skill.png" alt="" >
+      <div class="content" @click="skill()">
+        <img src="/static/images/skill.png" alt="">
         <p>我有技能</p>
       </div>
-      <div class="content">
-        <img src="/static/images/request.png" alt="" >
+      <div class="content" @click="request()">
+        <img src="/static/images/request.png" alt="">
         <p>我有任务</p>
       </div>
     </div>
   </div>
   <div class="cancel">
-    <img src="/static/images/cancel.png" alt="" >
+    <img src="/static/images/cancel.png" alt="" @click="cancel()">
   </div>
   <i-spin size="large" fix v-if="spinShow" custom>
     <view class="loading"></view>
@@ -71,7 +71,7 @@ export default {
     },
     getInfo() {
       let that = this;
-      http.get("/index/user/info").then(res => {
+      http.get("/auth/data").then(res => {
         if (res.data.success) {
           this.data = res.data.data;
         }
@@ -110,6 +110,15 @@ export default {
             });
         }
       });
+    },
+    skill(){
+      console.log('有技能')
+    },
+    request(){
+      console.log('有任务')
+    },
+    request(){
+      console.log('取消')
     }
   },
 
@@ -128,10 +137,9 @@ export default {
   },
   onPullDownRefresh: function() {
     setTimeout(() => {
-      http.get("/wechat/infor").then(res => {
+      http.get("/auth/data").then(res => {
         if (res.data.status == "success") {
           this.data = res.data.data;
-          global.commit("setBalance", this.data.accountBalance);
           wx.hideNavigationBarLoading(); //完成停止加载
           wx.stopPullDownRefresh(); //停止下拉刷新
         }
@@ -193,7 +201,7 @@ export default {
 }
 .ation{
   position: absolute;
-  bottom: 150rpx;
+  bottom: 200rpx;
   width: 100%;
 }
 .skill{
@@ -206,11 +214,14 @@ export default {
   width:130rpx;
 }
 .cancel{
+  width:200rpx;
   position: absolute;
-  bottom: 50px;
-  text-align: center;
+  bottom: 50rpx;
+  left:50%;
+  margin-left:-45rpx;
 }
 .cancel img{
+  margin: 0 auto;
   height:90rpx;
   width:90rpx;
 }
@@ -220,7 +231,8 @@ export default {
 }
 .content{
   float: left;
-  width:50%;
+  width:34%;
+  padding:0 8%;
 }
 
 </style>
