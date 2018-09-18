@@ -93,7 +93,6 @@ export default {
             .get("https://restapi.amap.com/v3/geocode/regeo",req)
             .then(res => {
               let data = res.data
-              console.log(data.regeocode.addressComponent.district)
               this.district = data.regeocode.addressComponent.district
               this.adcode = data.regeocode.addressComponent.adcode
               let r = {
@@ -117,7 +116,7 @@ export default {
     request(){
       console.log('有任务')
     },
-    request(){
+    cancel(){
       console.log('取消')
     }
   },

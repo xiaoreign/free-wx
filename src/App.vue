@@ -12,7 +12,7 @@ export default {
     wx.login({
       success: res => {
         wx.request({
-          url: "http://192.168.123.135:3000/auth/token",
+          url: "http://localhost:3000/auth/token",
           data: {
             code: res.code,
           },

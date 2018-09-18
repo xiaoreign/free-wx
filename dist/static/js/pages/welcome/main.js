@@ -90,13 +90,10 @@ app.$mount();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_global__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_request__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue__);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_global__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_request__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
 //
 //
 //
@@ -163,7 +160,7 @@ app.$mount();
     };
   },
 
-  methods: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default()({
+  methods: {
     getUserInfo: function getUserInfo() {
       this.isValidated = false;
     },
@@ -171,7 +168,7 @@ app.$mount();
       var _this = this;
 
       var that = this;
-      __WEBPACK_IMPORTED_MODULE_2__utils_request__["a" /* default */].get("/auth/data").then(function (res) {
+      __WEBPACK_IMPORTED_MODULE_1__utils_request__["a" /* default */].get("/auth/data").then(function (res) {
         if (res.data.success) {
           _this.data = res.data.data;
         }
@@ -191,16 +188,15 @@ app.$mount();
             location: longitude + "," + latitude,
             key: key
           };
-          __WEBPACK_IMPORTED_MODULE_2__utils_request__["a" /* default */].get("https://restapi.amap.com/v3/geocode/regeo", req).then(function (res) {
+          __WEBPACK_IMPORTED_MODULE_1__utils_request__["a" /* default */].get("https://restapi.amap.com/v3/geocode/regeo", req).then(function (res) {
             var data = res.data;
-            console.log(data.regeocode.addressComponent.district);
             _this2.district = data.regeocode.addressComponent.district;
             _this2.adcode = data.regeocode.addressComponent.adcode;
             var r = {
               city: _this2.adcode,
               key: key
             };
-            __WEBPACK_IMPORTED_MODULE_2__utils_request__["a" /* default */].get("https://restapi.amap.com/v3/weather/weatherInfo", r).then(function (res) {
+            __WEBPACK_IMPORTED_MODULE_1__utils_request__["a" /* default */].get("https://restapi.amap.com/v3/weather/weatherInfo", r).then(function (res) {
               var data = res.data.lives[0];
               _this2.weather = data.weather;
               _this2.temperature = data.temperature;
@@ -214,10 +210,11 @@ app.$mount();
     },
     request: function request() {
       console.log('有任务');
+    },
+    cancel: function cancel() {
+      console.log('取消');
     }
-  }, "request", function request() {
-    console.log('取消');
-  }),
+  },
 
   created: function created() {
     // 调用应用实例的方法获取全局数据
@@ -226,7 +223,7 @@ app.$mount();
     var _this3 = this;
 
     var timer = setInterval(function () {
-      if (__WEBPACK_IMPORTED_MODULE_1__utils_global__["a" /* default */].state.token) {
+      if (__WEBPACK_IMPORTED_MODULE_0__utils_global__["a" /* default */].state.token) {
         clearInterval(timer);
         _this3.spinShow = false;
         _this3.getInfo();
@@ -239,7 +236,7 @@ app.$mount();
     var _this4 = this;
 
     setTimeout(function () {
-      __WEBPACK_IMPORTED_MODULE_2__utils_request__["a" /* default */].get("/auth/data").then(function (res) {
+      __WEBPACK_IMPORTED_MODULE_1__utils_request__["a" /* default */].get("/auth/data").then(function (res) {
         if (res.data.status == "success") {
           _this4.data = res.data.data;
           wx.hideNavigationBarLoading(); //完成停止加载
